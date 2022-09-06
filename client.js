@@ -10,7 +10,12 @@ const connect = function () {
   conn.on("connect", () => {
   console.log("Successfully connected to game server");
   conn.write("Name: PS")
+  //setTimeout(() => {
+  //  conn.write("Move: up")
+  //}, 50);
   });
+  
+  
 
   conn.setEncoding("utf8");
   conn.on("data", () => {
@@ -18,6 +23,5 @@ const connect = function () {
   });
   return conn;
 };
-
 
 module.exports = connect;
